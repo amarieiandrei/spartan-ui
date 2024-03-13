@@ -23,6 +23,9 @@
       ],
       "@spartan-ng/ui-button-helm": [
         "libs/ui/ui-button-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-typography-helm": [
+        "libs/ui/ui-typography-helm/src/index.ts"
       ]
     }
   },

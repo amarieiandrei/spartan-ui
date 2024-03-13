@@ -8,14 +8,26 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink, HlmButtonDirective],
   template: `
-    <button hlmBtn variant="default" routerLink="/signals">Signals</button>
-    <button hlmBtn variant="destructive" routerLink="/standalone-components">
+  <div class="container">
+    <button hlmBtn [variant]=setRandomVariant() routerLink="/signals" class="btn">Signals</button>
+    <button hlmBtn [variant]=setRandomVariant() routerLink="/standalone-components" class="btn">
       Standalone Components
     </button>
+  </div>
   `,
+  styles: `
+    .container {
+      height: 100vh;
+      display: flex;
+      place-items: center;
+    }
+    .btn {
+      margin: auto;
+    }
+  `
 })
 export class HomeComponent {
-  public setRandomVariant = (): string => {
+  public setRandomVariant = (): any => {
     const variants: string[] = [
       'default',
       'destructive',

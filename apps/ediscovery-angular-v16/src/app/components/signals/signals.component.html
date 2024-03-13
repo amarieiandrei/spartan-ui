@@ -1,1 +1,44 @@
-<p>signals works!</p>
+<div class="flex flex-col">
+    <h1 class="text-5xl grid place-content-center mt-4 mb-8">Signals!</h1>
+
+    <div class="grid grid-cols-3 gap-4">
+        <div>
+            <h2 class="text-4xl grid place-content-center mb-10 ">Signal Actions</h2>
+
+            <div class="grid place-items-center h-full w-full">
+                <span class="font-semibold text-[20px]">Select a value:</span>
+                <div class="my-5 flex gap-3">
+                    <button hlmBtn variant="destructive" (click)="setValue('Lamborghini')">String</button>
+                    <button hlmBtn variant="destructive" (click)="setValue(100)">Number</button>
+                    <button hlmBtn variant="destructive" (click)="setValue(obj)">Object</button>
+                    <button hlmBtn variant="destructive" (click)="setValue(true)">Boolean</button>
+                    <button hlmBtn variant="destructive" (click)="setValue(null)">Null</button>
+                    <button hlmBtn variant="destructive" (click)="setValue(undefined)">Undefined</button>
+                </div>
+
+                <span class="font-semibold text-[20px]">Select an action:</span>
+                <div class="my-5 flex gap-3">
+                    <button hlmBtn (click)="setSignalValue(value)">Set signal value</button>
+                    <button hlmBtn (click)="updateSignalValue(value)">Update signal value</button>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-4xl grid place-content-center">Value Selected</h2>
+
+            <div class="grid place-content-center h-full">
+                {{value !== undefined ? (value | json) : 'undefined'}}
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-4xl grid place-content-center">Signal Value</h2>
+
+            <div class="grid place-content-center h-full">
+                <p>Value = {{ signal() !== undefined ? (signal() | json) : 'undefined'}}</p>
+                <p>Typeof = {{typeofSignal(signal())}}</p>
+            </div>
+        </div>
+    </div>
+</div>

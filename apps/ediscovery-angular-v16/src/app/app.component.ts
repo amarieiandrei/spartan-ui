@@ -6,4 +6,4 @@ import { RouterOutlet } from '@angular/router';
   selector: 'spartan-root',
   template: `<router-outlet></router-outlet>`,
 })
-export class AppComponent {}
+export class AppComponent { }
