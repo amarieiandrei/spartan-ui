@@ -22,6 +22,13 @@ export const appRoutes: Route[] = [
       ).then((m) => m.StandaloneComponentsComponent),
   },
   {
+    path: 'cookies',
+    loadComponent: () =>
+      import(
+        './components/cookies/cookies.component'
+      ).then((m) => m.CookiesComponent),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

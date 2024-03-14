@@ -1,11 +1,13 @@
-<div class="flex flex-col">
-    <h1 class="text-5xl grid place-content-center mt-4 mb-8">Signals!</h1>
+<div class="custom-background flex flex-col h-auto">
+    <h1 class="text-5xl grid place-content-center my-4">Signals!</h1>
+    <div hlmSeparator orientation="horizontal" class="mb-4"></div>
 
-    <div class="grid grid-cols-3 gap-4">
+    <div class=" grid grid-cols-3 gap-4">
         <div>
-            <h2 class="text-4xl grid place-content-center mb-10 ">Signal Actions</h2>
+            <h2 class="text-4xl grid place-content-center">Signal Actions</h2>
+            <div hlmSeparator orientation="horizontal" class="my-5 bg-black"></div>
 
-            <div class="grid place-items-center h-full w-full">
+            <div class="grid place-items-center  w-full">
                 <span class="font-semibold text-[20px]">Select a value:</span>
                 <div class="my-5 flex gap-3">
                     <button hlmBtn variant="destructive" (click)="setValue('Lamborghini')">String</button>
@@ -26,19 +28,104 @@
 
         <div>
             <h2 class="text-4xl grid place-content-center">Value Selected</h2>
+            <div hlmSeparator orientation="horizontal" class="my-5 bg-black"></div>
 
-            <div class="grid place-content-center h-full">
+            <div class="grid place-content-center">
                 {{value !== undefined ? (value | json) : 'undefined'}}
             </div>
         </div>
 
         <div>
             <h2 class="text-4xl grid place-content-center">Signal Value</h2>
+            <div hlmSeparator orientation="horizontal" class="my-5 bg-black"></div>
 
-            <div class="grid place-content-center h-full">
+            <div class="grid place-content-center">
                 <p>Value = {{ signal() !== undefined ? (signal() | json) : 'undefined'}}</p>
                 <p>Typeof = {{typeofSignal(signal())}}</p>
             </div>
         </div>
     </div>
+    <div hlmSeparator orientation="horizontal" class="my-4"></div>
+
+    <h1 class="text-4xl grid place-content-center mb-4">Important Things!</h1>
+
+    <div class="accordion w-1/2 m-auto mb-4" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    General Knowledge about Signals
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    From Angular version 16 we have a new reactive primitive in <code>Angular Core</code> called
+                    Signals.
+                    This primitive bringing the fine-grained reactivity into <code>Angular Core</code> and could unleash
+                    the
+                    more efficient and more targeted change detection mechanism that doesn't rely on
+                    <code>Zone JS Library</code> anymore.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    What is wrong with the&nbsp;<code>Zone JS Library</code>&nbsp;and&nbsp;<code>Change Detection</code>
+                    &nbsp;right now?
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    In general, back in the past, <code>Zone JS Third party Library</code> was a great solution, it
+                    could, kind of
+                    magically, detect changes for developers in Angular applications state and synchronize or refresh
+                    the component without any additional work from a developer side.
+                    But, the more application grows the more often <code>Zone JS</code> and
+                    <code>Change Detection</code>
+                    becomes a bottleneck (blocaj) in the application performance and in order to solve those
+                    performance issues developers had to dive deeper and deeper into the process of how these things are
+                    working in Angular.
+                    <br />
+                    <br />
+                    Another drawback (dezavantaj) is that <code>Zone JS</code> can't tell Angular which exactly
+                    component has changed instead it just notifies Angular that some event happen in the application
+                    that might change
+                    the state of one or more components, for example in the component 3, but we don't know exactly the
+                    component and because of that Angular has to perform the change detection cycle for all components
+                    tree from top to bottom and this
+                    is not the best approach.
+                    <br />
+                    <br />
+                    <code>Zone JS</code> it is a third party library that is being used by Angular and it is included
+                    into the final bundle,
+                    so if we get rid of <code>Zone JS</code> then we can obviously reduce the bundle size of the
+                    application.
+                    <br />
+                    <br />
+                    <code>
+                    So this fine-grained ( inovatie ) reactivity primitive that comes with this new concept of Signals can significantly improve change 
+                    detection and make it more targeted and perform change detection only for components where their data model has changed.
+                    </code>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Question #3
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                    <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+                    happening here in terms of content, but just filling up the space to make it look, at least at first
+                    glance, a bit more representative of how this would look in a real-world application.
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

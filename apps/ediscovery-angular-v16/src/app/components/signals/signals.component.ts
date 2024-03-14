@@ -1,13 +1,28 @@
 import { Component, Signal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+// Directives
 import { HlmH2Directive } from 'libs/ui/ui-typography-helm/src';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { HlmSeparatorDirective } from 'libs/ui/ui-separator-helm/src';
+
+// Components
 
 @Component({
   selector: 'spartan-signals',
   standalone: true,
-  imports: [CommonModule, HlmH2Directive, HlmButtonDirective],
+  imports: [
+    CommonModule,
+    HlmH2Directive,
+    HlmButtonDirective,
+    HlmSeparatorDirective,
+  ],
   templateUrl: './signals.component.html',
+  styles: `
+    .collapse.show {
+      visibility: visible;
+    }
+  `
 })
 export class SignalsComponent {
   // Fields

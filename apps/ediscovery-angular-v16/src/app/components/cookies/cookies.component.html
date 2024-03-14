@@ -1,0 +1,24 @@
+<div class="flex flex-col">
+    <h1 class="text-5xl grid place-content-center mt-4 mb-8">Cookies!</h1>
+
+    <div class="grid place-content-center gap-4">
+        <button hlmBtn (click)="setCookie()">Set Cookie</button>
+
+        <div class="flex items-center gap-2">
+            <button hlmBtn (click)="getCookie()">Get Cookie</button>
+            <span>Cookie Value = ({{cookieValue}})</span>
+        </div>
+
+        <button hlmBtn (click)="getAllCookies()">Get All Cookies</button>
+
+        <div class="flex items-center gap-2">
+            <button hlmBtn (click)="checkCookie()">Check Cookie</button>
+            <span>Check 'maliakademy' Cookie = ({{checkCookieValue}})</span>
+        </div>
+
+        <button hlmBtn (click)="deleteCookie()">Delete Cookie</button>
+
+        <button hlmBtn (click)="deleteAllCookies()">Delete All Cookies</button>
+
+    </div>
+</div>
