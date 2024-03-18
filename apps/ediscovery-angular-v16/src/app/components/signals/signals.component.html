@@ -1,32 +1,26 @@
 <div class="custom-background flex flex-col h-auto">
-  <!-- Header -->
-  <h1 class="text-5xl grid place-content-center my-4">Signals!</h1>
-  <div hlmSeparator orientation="horizontal" class="mb-4"></div>
+    <!-- Header -->
+    <h1 class="text-5xl grid place-content-center my-4">Signals!</h1>
+    <div hlmSeparator orientation="horizontal" class="mb-4"></div>
 
-  <!-- Example -->
-  <div class="grid place-content-center">
-    <p class="my-2">Search String: {{ search() }}</p>
-    <input type="text" hlmInput (input)="setSearchString($event)" />
-    <div hlmSeparator orientation="horizontal" class="my-4"></div>
-    <ul class="list-group list-group-numbered">
-      <li
-        class="list-group-item list-group-item-primary"
-        *ngFor="let user of filteredUsers()"
-      >
-        {{ user.name }}
-      </li>
-    </ul>
-    <div hlmSeparator orientation="horizontal" class="my-4"></div>
-    <button hlmBtn variant="outline" (click)="addUser()">
-      Add Random User
-    </button>
-  </div>
+    <!-- Example -->
+    <div class="grid place-content-center">
+        <p class="my-2">Search String: {{ search() }}</p>
+        <input type="text" hlmInput (input)="setSearchString($event)" />
+        <div hlmSeparator orientation="horizontal" class="my-4"></div>
+        <ul class="list-group list-group-numbered">
+            <li class="list-group-item list-group-item-primary" *ngFor="let user of filteredUsers()">
+                {{ user.name }}
+            </li>
+        </ul>
+        <div hlmSeparator orientation="horizontal" class="my-4"></div>
+        <button hlmBtn variant="outline" (click)="addUser()">
+            Add Random User
+        </button>
+    </div>
 
-  <!-- General Knowledge -->
-  <spartan-generic-accordion
-    [firstItem]="firstItem"
-    [secondItem]="secondItem"
-    [thirdItem]="thirdItem"
-  >
-  </spartan-generic-accordion>
+    <!-- General Knowledge -->
+    <spartan-generic-accordion [firstItem]="firstItem" [secondItem]="secondItem" [thirdItem]="thirdItem"
+        [fourthItem]="fourthItem" [fifthItem]="fifthItem">
+    </spartan-generic-accordion>
 </div>

@@ -1,6 +1,5 @@
 import {
   Component,
-  Signal,
   WritableSignal,
   computed,
   effect,
@@ -33,10 +32,12 @@ import { GenericAccordionComponent } from '../generic-accordion/generic-accordio
   templateUrl: './signals.component.html',
 })
 export class SignalsComponent {
+  // Writable Signals
   search = signal(localStorage.getItem('searchString') ?? '');
   users = signal([
     { id: 1, name: 'Andrei' },
     { id: 2, name: 'Lucian' },
+    { id: 3, name: 'Anton' },
   ]);
   // Whenever any signal value inside callback function changes the effect function will be re-executed!
   logger = effect(() => {
@@ -73,12 +74,26 @@ export class SignalsComponent {
       So this fine-grained reactivity primitive (inovație) that comes with the new concept of Signals can significantly improve change detection and make it more targeted and perform change detection only for components where their data model has changed.`,
   });
   thirdItem: WritableSignal<any> = signal({
+    question: `What are signals?`,
+    answer: `A signal is like a variable. It holds a value for us and we can change that value whenever we would like. Unlike a variable though, a signal knows where in the application is's used, like which components are displaying its value in their templates, and it can signal to those components whenever we change the value inside. Basically, it is a wrapper around a value that can notify interested consumers when that value changes. Signals can contain any value, from simple primitives to complex data structures.
+    
+      A signal's value is always read through a getter function, which allows Angular to track where the signal is used.`
+  });
+  fourthItem: WritableSignal<any> = signal({
     question: `Writable Signals, Computed Signals, Effects`,
     answer: `Writable signals provide an API for updating their values directly. You create writable signals by calling the signal function with the signal's initial value.
     
-    Computed Signals can track all the signal changes and recalculate signal values that are based on, each time, in order to have the UI updated with the newest values.
+    Computed Signals can track all the signal changes and recalculate signal values that are based on, each time, in order to have the UI updated with the newest values. They derive their values from the values of other signals and because signals can notify consumers when they change, computed signals are automatically kept up to date without us having to set them ourselves.
     
-    Effects are helping developer to perform side effects when the value of any signal is changing. For example, image I want to record the last value of search signal in the local storage and use it as an initial value for the signal if the user reload the page.
-    For that we can use a special function called effect that takes a callback function as a parameter and inside you can define the logic. Whenever any signal value inside callback function changes the effect function will be re-executed.`,
+    An Effect is something you want to have happen whenever some signals change. With the Effect API, we can tell Angular to run a function which is going to use the values of some signals and Angular will take care of automatically re-running that function if those signals are updated. Effects are helping developer to perform side effects when the value of any signal is changing.
+
+    For example, image I want to record the last value of search signal in the local storage and use it as an initial value for the signal if the user reload the page. For that we can use a special function called effect that takes a callback function as a parameter and inside you can define the logic. Whenever any signal value inside callback function changes the effect function will be re-executed.`,
   });
+  fifthItem: WritableSignal<any> = signal({
+    question: `Advanced topics`,
+    answer: `Signal equality functions:
+    
+    When creating a signal, you can optionally provide an equality function, which will be used to check whether the new value is actually different than the previous one.`,
+    example: true
+  })
 }
