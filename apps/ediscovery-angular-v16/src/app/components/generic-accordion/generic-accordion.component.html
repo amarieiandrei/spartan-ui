@@ -66,14 +66,19 @@
         <hr>
         <div class="my-2"><i>This is an array of strings:</i> [{{names()}}]</div>
         <div class="flex items-center gap-2">
-          <!-- <button (click)="changeEmployee()" hlmBtn variant="outline">Change Employee</button> -->
+          <button (click)="changeEmployee()" hlmBtn variant="outline">Change Employee</button>
           <button (click)="addEmployee()" hlmBtn variant="outline">Add Employee</button>
-          <!-- <span>Employee: {{newEmployee}}</span> -->
-          <!-- <div hlmAlert variant="destructive" class="border-1 red p-3 w-30">
+          <span>Employee: {{newEmployee()}}</span>
+          <div hlmAlert variant="destructive" class="border-1 red p-3 w-30" *ngIf="alert">
             <hlm-icon hlmAlertIcon name="lucideAlertTriangle" />
             <h4 hlmAlertTitle>Signal equal function Error</h4>
             <p hlmAlertDesc>Value trying to add is NOT string</p>
-          </div> -->
+          </div>
+          <div hlmAlert variant="default" class="border-1 p-3 w-30" *ngIf="successAlert">
+            <hlm-icon hlmAlertIcon name="lucideCheckCircle" />
+            <h4 hlmAlertTitle>Signal equal function Success</h4>
+            <p hlmAlertDesc>Value of type string added</p>
+          </div>
         </div>
       </div>
     </div>
