@@ -29,6 +29,13 @@ export const appRoutes: Route[] = [
       ).then((m) => m.CookiesComponent),
   },
   {
+    path: 'solid-principles',
+    loadComponent: () =>
+      import(
+        './components/solid-principles/solid-principles.component'
+      ).then((m) => m.SolidPrinciplesComponent)
+  },
+  {
     path: '**',
     redirectTo: '',
   },

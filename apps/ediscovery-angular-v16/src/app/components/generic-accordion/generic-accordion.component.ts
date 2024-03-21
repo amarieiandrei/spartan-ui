@@ -29,18 +29,22 @@ export class GenericAccordionComponent {
   @Input() firstItem: WritableSignal<any> = signal({
     question: 'Researching...',
     answer: 'Work in progress...',
+    example: false
   });
   @Input() secondItem: WritableSignal<any> = signal({
     question: 'Researching...',
     answer: 'Work in progress...',
+    example: false
   });
   @Input() thirdItem: WritableSignal<any> = signal({
     question: 'Researching...',
     answer: 'Work in progress...',
+    example: false
   });
   @Input() fourthItem: WritableSignal<any> = signal({
     question: 'Researching...',
     answer: 'Work in progress...',
+    example: false
   });
   @Input() fifthItem: WritableSignal<any> = signal({
     question: 'Researching...',
@@ -50,10 +54,12 @@ export class GenericAccordionComponent {
   @Input() sixthItem: WritableSignal<any> = signal({
     question: 'Researching...',
     answer: 'Work in progress...',
+    example: false
   });
   @Input() seventhItem: WritableSignal<any> = signal({
     question: 'Researching...',
     answer: 'Work in progress...',
+    example: false
   });
 
   // Signals Advanced Topics

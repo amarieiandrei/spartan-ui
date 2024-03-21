@@ -22,8 +22,14 @@ import { RouterLink } from '@angular/router';
     <div hlmSeparator orientation="vertical"></div>
     <button hlmBtn [variant]=setRandomVariant() routerLink="/cookies" class="m-auto">Cookies</button>
     <div hlmSeparator orientation="vertical"></div>
+    <button hlmBtn [variant]=setRandomVariant() routerLink="/solid-principles" class="m-auto">
+      SOLID principles
+    </button>
+    <div hlmSeparator orientation="horizontal"></div>
     <div hlmSeparator orientation="vertical"></div>
     <div hlmSeparator orientation="vertical"></div>
+    <div hlmSeparator orientation="vertical"></div>
+    <div hlmSeparator orientation="horizontal"></div>
   </div>
   `,
 })

@@ -25,6 +25,11 @@
       <div class="accordion-body">
         {{ secondItem().answer }}
       </div>
+      <div class="accordion-body" *ngIf="secondItem().example">
+        <span>Example:</span>
+        <hr>
+        <img src="../../../assets/design-patterns.png" alt="Design Patterns Photo Description">
+      </div>
     </div>
   </div>
   <!-- Item 3 -->

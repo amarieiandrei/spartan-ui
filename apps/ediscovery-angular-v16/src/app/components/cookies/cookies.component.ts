@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+
+// Services
 import { CookieService } from 'ngx-cookie-service';
+
+// Directives
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { HlmSeparatorDirective } from 'libs/ui/ui-separator-helm/src';
+
 @Component({
   selector: 'spartan-cookies',
   standalone: true,
-  imports: [CommonModule, HlmButtonDirective],
+  imports: [CommonModule, HlmButtonDirective, HlmSeparatorDirective],
   templateUrl: './cookies.component.html',
 })
 export class CookiesComponent {

@@ -1,0 +1,37 @@
+<div class="custom-background-v2 flex flex-col h-auto">
+    <!-- Header -->
+    <h1 class="text-5xl flex place-content-center my-4 gap-2">
+        <span class="text-[#7f0cf1]">S - </span>
+        <span class="text-[#fe31d2]">O - </span>
+        <span class="text-[#7f0cf1]">L - </span>
+        <span class="text-[#fe31d2]">I - </span>
+        <span class="text-[#7f0cf1]">D </span>
+        <span class="underline decoration-sky-500/30">design principles in</span>
+        <span class="text-[#fe31d2] underline decoration-[#f20754]-500/30">#Angular</span>
+    </h1>
+    <div hlmSeparator orientation="horizontal" class="mb-4"></div>
+
+    <!-- General Knowledge -->
+    <spartan-generic-accordion [firstItem]="firstItem" [secondItem]="secondItem" [thirdItem]="thirdItem"
+        [fourthItem]="fourthItem" [fifthItem]="fifthItem" [sixthItem]="sixthItem"
+        [seventhItem]="seventhItem"></spartan-generic-accordion>
+
+    <h3 class="text-3xl ml-10 my-4 text-gray-300 underline decoration-sky-500/30">Other Principles:</h3>
+
+    <div class="flex m-auto gap-20 my-4">
+        <!-- DRY -->
+        <div class="card h-[200px] w-[200px] border-none blur-sm transition ease-in" id="dry-principle">
+            <div class="custom-background rounded p-10">
+                <span class="text-[#fe31d2] text-3xl"># D R Y</span>
+                <p class="card-text text-white text-xl">Don't Repeat Yourself!</p>
+            </div>
+        </div>
+        <!-- KISS -->
+        <div class="card h-[200px] w-[200px] border-none blur-sm transition ease-in" id="kiss-principle">
+            <div class="custom-background rounded p-10">
+                <span class="text-[#7f0cf1] text-3xl"># K I S S</span>
+                <p class="card-text text-white text-xl">Keep It Simple, Stupid!</p>
+            </div>
+        </div>
+    </div>
+</div>
