@@ -1,1 +1,15 @@
-<p>standalone-components works!</p>
+<div class="custom-background-v2 flex flex-col h-auto">
+  <!-- Header -->
+  <h1 class="text-5xl grid place-content-center my-4">
+    Standalone Components!
+  </h1>
+  <div hlmSeparator orientation="horizontal" class="mb-4"></div>
+
+  <!-- General Knowledge -->
+  <spartan-generic-accordion
+    [firstItem]="firstItem"
+    [secondItem]="secondItem"
+    [thirdItem]="thirdItem"
+    [fourthItem]="fourthItem"
+  ></spartan-generic-accordion>
+</div>

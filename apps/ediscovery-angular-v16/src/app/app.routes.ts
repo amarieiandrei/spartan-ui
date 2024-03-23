@@ -24,16 +24,16 @@ export const appRoutes: Route[] = [
   {
     path: 'cookies',
     loadComponent: () =>
-      import(
-        './components/cookies/cookies.component'
-      ).then((m) => m.CookiesComponent),
+      import('./components/cookies/cookies.component').then(
+        (m) => m.CookiesComponent
+      ),
   },
   {
     path: 'solid-principles',
     loadComponent: () =>
-      import(
-        './components/solid-principles/solid-principles.component'
-      ).then((m) => m.SolidPrinciplesComponent)
+      import('./components/solid-principles/solid-principles.component').then(
+        (m) => m.SolidPrinciplesComponent
+      ),
   },
   {
     path: '**',
