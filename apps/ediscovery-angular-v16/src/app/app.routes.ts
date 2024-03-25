@@ -36,6 +36,27 @@ export const appRoutes: Route[] = [
       ),
   },
   {
+    path: 'new-controls-flow',
+    loadComponent: () =>
+      import('./components/new-controls-flow/new-controls-flow.component').then(
+        (m) => m.NewControlsFlowComponent
+      ),
+  },
+  {
+    path: 'deffered-loading',
+    loadComponent: () =>
+      import('./components/deffered-loading/deffered-loading.component').then(
+        (m) => m.DefferedLoadingComponent
+      ),
+  },
+  {
+    path: 'self-closing-tags-&-input-required',
+    loadComponent: () =>
+      import(
+        './components/self-closing-tags-/self-closing-tags-.component'
+      ).then((m) => m.SelfClosingTagsComponent),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

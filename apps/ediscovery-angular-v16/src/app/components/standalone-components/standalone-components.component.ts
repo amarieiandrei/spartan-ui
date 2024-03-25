@@ -50,5 +50,4 @@ export class StandaloneComponentsComponent {
     
     This concept helps us to load and bootstrap the application faster because lazy loaded components isn't part of the main bundle, it's loaded for some user interaction on page.`,
   });
-  // fifthItem
 }
