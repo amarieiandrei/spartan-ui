@@ -1,1 +1,86 @@
-<p>new-controls-flow works!</p>
+<div class="custom-background flex flex-col h-auto">
+    <!-- Header -->
+    <h1 class="text-5xl flex place-content-center my-4 gap-2">New Controls Flow!
+        <span class="text-[#fe31d2] underline decoration-[#f20754]-500/30">#Angular V17</span>
+
+    </h1>
+    <div hlmSeparator orientation="horizontal" class="mb-4"></div>
+
+    <!-- Example -->
+    <div class="flex mb-4 gap-4 px-10 py-3">
+        <!-- @if -->
+        <div class="w-1/3 bg-white rounded px-4 py-2 h-auto">
+            <h1 class="text-xl font-medium text-[#7f0cf1]">&#64;if</h1>
+            <hr>
+            <span class="text-sm text-gray-600">Replaces *ngIf</span>
+            <img src="../../../assets/control-flow-1.png" class="my-2" />
+            <span class="font-medium">The syntax of the control flow:</span>
+            <ul class="list-disc px-3 my-2 text-sm flex flex-col gap-2">
+                <li>The "&#64;" tells Angular this this is a control flow statement.</li>
+                <li>The keyword "if" looks a lot like a JavaScript if statement, which should be more familiar with
+                    developers.</li>
+                <li>The condition in parentheses.</li>
+                <li>The opening and closing braces, which make it easier to group multiple elements without the need of
+                    ng container.</li>
+            </ul>
+            <span class="font-medium">Compared to the *ngIf based syntax, the new syntax is clearer, more robust, and
+                easier to reason about.</span>
+            <hr class="my-2">
+            <span class="font-medium">There is also support for "else" without the need of ng templates and
+                variables.</span>
+            <img src="../../../assets/control-flow-2.png" class="my-2" />
+            <hr class="my-2">
+            <span class="font-medium">Also support for "else if" syntax.</span>
+            <img src="../../../assets/control-flow-3.png" class="my-2" />
+        </div>
+        <div hlmSeparator orientation="vertical" class="bg-white"></div>
+
+        <!-- @for -->
+        <div class="w-1/3 bg-white rounded px-4 py-2 h-auto">
+            <h1 class="text-xl font-medium text-[#fe31d2]">&#64;for</h1>
+            <hr>
+            <span class="text-sm text-gray-600">Replaces *ngFor</span>
+            <img src="../../../assets/control-flow-4.png" class="my-2" />
+            <span>The &#64;for looks very similar to a TypeScript for loop. There are maintaining similar syntax for
+                our iterables.</span>
+            <br />
+            <br />
+            <span class="text-normal font-medium">The new &#64;for, add an important performance change!</span>
+            <br />
+            <br />
+            <span class="text-normal font-medium">Track is now required.</span>
+            <span>This will help our loops be faster and more efficient. To make this easier, track now lets us to
+                specify an expression directly. No more track by functions.</span>
+            <hr class="my-3">
+            <span>We can also specify a fallback when there are no items in the list with the new &#64;empty
+                syntax.</span>
+            <img src="../../../assets/control-flow-5.png" class="my-3" />
+            <hr class="my-3">
+            <span class="text-normal font-medium">Advantages:</span>
+            <ul class="list-disc px-3 my-2 text-sm flex flex-col gap-2">
+                <li>Clean code, readable code</li>
+                <li>Optimization of implementation considerably.</li>
+                <li class="font-bold">&#64;for is up to 90% faster when processing certain list updates.</li>
+            </ul>
+            <img src="../../../assets/control-flow-6.png" />
+        </div>
+        <div hlmSeparator orientation="vertical" class="bg-white"></div>
+
+        <!-- @switch -->
+        <div class="w-1/3 bg-white rounded px-4 py-2 h-auto">
+            <h1 class="text-xl font-medium text-[#fe31d2]">&#64;switch</h1>
+            <hr>
+            <span class="text-sm text-gray-600">Replaces *ngSwitch</span>
+            <br />
+            <span>You can use the new &#64;switch syntax to write clear and robust switch statements directly in your
+                templates.</span>
+            <img src="../../../assets/control-flow-7.png" class="my-3" />
+            <span>With similar syntax as if and for, you specify the expression, then use &#64;case syntax to specify
+                the clauses.</span>
+            <br />
+            <span>And just like switch statements in JavaSript, we can use the &#64;default keyword for your default
+                case</span>
+        </div>
+    </div>
+
+</div>
