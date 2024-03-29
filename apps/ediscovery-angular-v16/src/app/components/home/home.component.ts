@@ -88,7 +88,7 @@ import { RouterLink } from '@angular/router';
         routerLink="self-closing-tags-&-input-required"
         class="m-auto"
       >
-        Self Closing Tag / Marking Inputs as required comm
+        Self Closing Tag / Marking Inputs as required
       </button>
     </div>
   `,
