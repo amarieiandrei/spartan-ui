@@ -90,6 +90,16 @@ import { RouterLink } from '@angular/router';
       >
         Self Closing Tag / Marking Inputs as required
       </button>
+      <div hlmSeparator orientation="vertical"></div>
+      <button
+        hlmBtn
+        [variant]="setRandomVariant()"
+        routerLink="defferable-views"
+        class="m-auto"
+      >
+        Defferable Views
+      </button>
+      <div hlmSeparator orientation="horizontal"></div>
     </div>
   `,
 })

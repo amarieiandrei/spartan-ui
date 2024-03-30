@@ -57,6 +57,13 @@ export const appRoutes: Route[] = [
       ).then((m) => m.SelfClosingTagsComponent),
   },
   {
+    path: 'defferable-views',
+    loadComponent: () =>
+      import('./components/defferable-views/defferable-views.component').then(
+        (m) => m.DefferableViewsComponent
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

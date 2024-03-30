@@ -1,0 +1,213 @@
+<div class="custom-background flex flex-col h-auto">
+  <!-- Header -->
+  <h1 class="text-5xl flex place-content-center my-4 gap-2">
+    Defferable Views!
+    <span class="text-[#fe31d2] underline decoration-[#f20754]-500/30">
+      #Angular
+      <span class="text-[#7f0cf1]">V17</span>
+    </span>
+  </h1>
+  <div hlmSeparator orientation="horizontal" class="mb-4"></div>
+
+  <!-- Informations -->
+
+  <!-- 1, 2 Tables -->
+  <div class="flex flex-row mb-4 gap-4 px-10 py-3">
+    <!-- Lazy Loading before Angular 17 -->
+    <div class="custom-background w-1/2 bg-white rounded px-4 py-2 h-auto">
+      <h1 class="text-2xl font-medium text-[#7f0cf1]">
+        # Lazy Loading before Angular 17
+      </h1>
+      <hr class="my-1" />
+      <p class="my-2">
+        Before Angular 17 we had a couple of ways to reduce bundle size for our
+        application. The first one is a well-known router based lazy loading.
+        <img src="../../../assets/lazy-loading-example-1.png" class="my-2" />
+        I just take a route and in the
+        <span class="font-bold">loadComponent</span> property I can define this
+        simple simple notation which instructs Angular that the JavaScript code
+        for this component has to be removed from the main application bundle
+        size and loaded only when this road is activated.
+      </p>
+      <hr class="my-3" />
+      <p class="text-2xl font-bold">
+        Read after <span class="text-[#7f0cf1]"># Recognize the Problem</span>
+      </p>
+      <hr class="my-3" />
+
+      <!-- defer block in action -->
+      <div class="bg-white rounded px-4 py-2">
+        <h1 class="text-2xl font-medium text-[#fe31d2]">
+          # defer block in action
+        </h1>
+        <hr class="my-1" />
+        <p class="my-2">
+          Starting with <span class="text-[#7f0cf1]">Angular 17</span> the same
+          functionality we can implement by wrapping our heavy component that we
+          want to Lazy Load with this brand new
+          <span class="text-[#fe31d2]">&#64;defer</span> block just like below.
+          <img src="../../../assets/deferrable-views-3.png" class="my-2" />
+          With this new approach we will write less code, more declarative code
+          and intention of the code is clear.
+          <br />
+          <br />
+          If we want to investigate the compiled code of this component with
+          defferable view block we will see that during the compilation phase
+          the Angular compiler transforms this notation into a bunch of
+          functions. The first function is the defer function which performs all
+          the magic. Angular perform very similar thing that we did in the
+          <span class="text-[#7f0cf1]"># Recognize the Problem</span>, but on
+          the lower lever using the internal Angular API and the data structures
+
+          <img src="../../../assets/deferrable-views-4.png" class="my-2" />
+        </p>
+      </div>
+    </div>
+
+    <!-- Recognize the Problem -->
+    <div class="w-1/2 bg-white rounded px-4 py-2 h-auto">
+      <h1 class="text-2xl font-medium text-[#fe31d2]">
+        # Recognize the Problem
+      </h1>
+      <hr class="my-1" />
+      <p class="my-2">
+        Sometimes our apps are designed in such a way so that lazy chunk has to
+        be loaded based on some
+        <span class="text-[#fe31d2] font-medium">certain component state</span>
+        or <span class="text-[#fe31d2] font-medium">event</span> instead of the
+        Angular router state as in the previous example with Lazy Loading.
+        <br />
+        <br />
+        It is also possible even with the older Angular version, but the
+        solution would not be simple because it involves some in-depth knowledge
+        about
+        <span class="text-[#7f0cf1] font-medium">ES6 Dynamic Imports</span> and
+        <span class="text-[#7f0cf1] font-medium"
+          >Dynamic Components Creation</span
+        >
+        and additional work from our side.
+        <br />
+        <br />
+        The simplest solution might look like this one where we can distinguish
+        two faces:
+        <span class="text-[#7f0cf1] font-medium">1. chunk loading</span> and
+        <span class="text-[#7f0cf1] font-medium"
+          >2. component activation phase</span
+        >
+        <img src="../../../assets/deferrable-views-1.png" class="my-2" />
+        The loading stage would look like the usage of Angular dynamic import
+        which at build time instructs Angular bundler that this component has to
+        be chunked out from the main bundle and at run time the same piece of
+        code will load this chunk from the endpoint and from there we can
+        destructure already their component class, however is not enough just to
+        load their component, we need to dynamically created in order to see it
+        on the page and this is something that we do during the second phase
+        which involves also multiple steps like:
+        <span class="text-[#7f0cf1] font-medium"
+          >1. defining container element</span
+        >
+        in the template,
+        <span class="text-[#7f0cf1] font-medium"
+          >2. get reference to this container</span
+        >
+        and finally we can
+        <span class="text-[#7f0cf1] font-medium"
+          >3. create component instance.</span
+        >
+        <br />
+        <img src="../../../assets/deferrable-views-2.png" class="my-2" />
+        Quite a lot of code and I didn't speak about things like showing the
+        loader during the chunk loading or error handling and many other things
+        we need to care about in real usecases.
+      </p>
+    </div>
+  </div>
+
+  <!-- 3, 4 Tables -->
+  <div class="flex mb-4 gap-4 px-10 py-3">
+    <!-- placeholder, @loading and @error blocks -->
+    <div class="w-full bg-white rounded px-4 py-2 h-auto">
+      <h1 class="text-2xl font-medium text-[#7f0cf1]">
+        # placeholder, &#64;loading and &#64;error blocks
+      </h1>
+      <hr class="my-1" />
+
+      <!-- @placeholder -->
+      <h1 class="font-bold text-xl text-[#fe31d2] my-2">&#64;placeholder</h1>
+      <hr />
+      <p class="my-2">
+        Before the lazy component it is loaded and activated we would like to
+        show some placeholder to give the user some visual feedback that
+        something is going on and it is straightforward to achieve with the
+        dedicated
+        <span class="font-medium text-[#7f0cf1]">&#64;placeholder</span> block.
+        <img src="../../../assets/deferrable-views-5.png" class="my-2" />
+        The content defined inside this block will be shown before the lazy
+        content is activated.
+      </p>
+
+      <!-- @loading -->
+      <h1 class="font-bold text-xl text-[#fe31d2] my-2">&#64;loading</h1>
+      <hr />
+      <p class="my-2">
+        Sometimes we want to notify users specifically about the chunk loading.
+        For that there is another block called loading that works very similar
+        previous blocks. The content inside the curly braces will be shown
+        during this phase.
+        <img src="../../../assets/deferrable-views-7.png" class="my-2 m-auto" />
+        The difference between loading and placeholder blocks can be confusing
+        because when we Load and Activate the defer block then the loading block
+        immediately overlaps the placeholder block and you may think that those
+        two states are interchangeable, but these two are different stages in
+        the process.
+        <img src="../../../assets/deferrable-views-8.png" class="my-2 m-auto" />
+        The <span class="font-bold text-[#fe31d2]">chunk loading</span> stage is
+        a part of the
+        <span class="font-bold text-[#fe31d2]"
+          >defer block activation stage</span
+        >.
+      </p>
+
+      <!-- @error -->
+      <h1 class="font-bold text-xl text-[#fe31d2] my-2">&#64;error</h1>
+      <hr />
+      <p class="my-2">
+        In the case when the lazy chunk couldn't be loaded we can show user the
+        template inside error block.
+      </p>
+      <img src="../../../assets/deferrable-views-6.png" class="my-2 m-auto" />
+      <p>
+        The
+        <span class="font-bold text-[#7f0cf1]">&#64;placeholder</span>,
+        <span class="font-bold text-[#7f0cf1]">&#64;loading</span>,
+        <span class="font-bold text-[#7f0cf1]">&#64;error</span>, will be
+        eagerly loaded and will be bundled into the main bundle, we need to keep
+        in mind that.
+      </p>
+    </div>
+
+    <!-- Deferrable Views Triggers -->
+    <div class="custom-background-v2 /2 bg-white rounded px-4 py-2 h-auto">
+      <h1 class="text-2xl font-medium text-[#fe31d2]">
+        # Deferrable Views Triggers
+      </h1>
+      <hr class="my-1" />
+      <p class="my-2">7:35</p>
+    </div>
+  </div>
+
+  <!-- 5, 6 Tables -->
+  <div class="flex mb-4 gap-4 px-10 py-3">
+    <!-- Chunk Prefetching -->
+    <div class="w-1/2 bg-white rounded px-4 py-2 h-auto">
+      <h1 class="text-2xl font-medium text-[#7f0cf1]"># Chunk Prefetching</h1>
+      <hr class="my-1" />
+    </div>
+
+    <!-- Conclusions -->
+    <div class="w-1/2 bg-white rounded px-4 py-2 h-auto">
+      <h1 class="text-2xl font-medium text-[#fe31d2]"># Conclusions</h1>
+      <hr class="my-1" />
+    </div>
+  </div>
+</div>
