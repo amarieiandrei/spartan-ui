@@ -187,27 +187,103 @@
     </div>
 
     <!-- Deferrable Views Triggers -->
-    <div class="custom-background-v2 /2 bg-white rounded px-4 py-2 h-auto">
+    <div
+      class="w-1/2 custom-background-v2 /2 bg-white rounded px-4 py-2 h-auto"
+    >
       <h1 class="text-2xl font-medium text-[#fe31d2]">
         # Deferrable Views Triggers
       </h1>
       <hr class="my-1" />
-      <p class="my-2">7:35</p>
+      <p class="my-2">
+        Defferable view triggers are instructions for the &#64;defer block of
+        when the lazy chunks have to be loaded and activated.
+        <br />
+        <br />
+        For example we can delay the activation of the &#64;defer block by fixed
+        amount of time by using the
+        <span class="font-bold text-[#7f0cf1]">timer</span> trigger.
+        <img src="../../../assets/deferrable-views-9.png" class="my-2" />
+        <br />
+        <span class="font-bold text-[#7f0cf1]">After and Minimum</span>
+        parameters helps us to define a time while the loading placeholder has
+        to be visible even though the corresponding JavaScript chunk has been
+        already loaded.
+        <img src="../../../assets/deferrable-views-10.png" class="my-2" />
+        <br />
+        Another very usefull trigger is called
+        <span class="font-bold text-[#7f0cf1]">viewport</span> and it handles
+        one of the most popular use case for defferable use feature. It is when
+        you have very heavy component that during the initial page loading it's
+        located outside and it's not visible on the initial screen, in this case
+        we can instruct Angular to activate the &#64;defer block only when it
+        enters the viewport.
+        <img src="../../../assets/deferrable-views-11.png" class="my-2" />
+        <br />
+        We can activate the &#64;defer block when some another DOM element
+        enters the viewport.
+        <img src="../../../assets/deferrable-views-12.png" class="my-2" />
+        When this element enters the viewport it will instruct Angular to chunk
+        what is created for exactly this defer block.
+        <br />
+        <br />
+        Also we can create our own
+        <span class="font-bold text-[#7f0cf1]">defferable views triggers</span>.
+        The custom trigger is represented by the keywork
+        <span class="font-bold text-[#7f0cf1]">when</span> and the value for
+        this keywork has to be a boolean value true or false.
+        <img src="../../../assets/deferrable-views-13.png" class="my-2" />
+        In this case nothing will happen until the user will click the trigger
+        button to change the value of
+        <span class="font-bold text-[#7f0cf1]">shouldLoad</span> into true and
+        after that the lazy content from &#64;defer block will be loaded.
+      </p>
     </div>
   </div>
 
   <!-- 5, 6 Tables -->
   <div class="flex mb-4 gap-4 px-10 py-3">
     <!-- Chunk Prefetching -->
-    <div class="w-1/2 bg-white rounded px-4 py-2 h-auto">
+    <div class="w-full bg-white rounded px-4 py-2 h-auto">
       <h1 class="text-2xl font-medium text-[#7f0cf1]"># Chunk Prefetching</h1>
       <hr class="my-1" />
+      <p class="my-2">
+        Defferable views allow us to go one step further to improve the user
+        experience of our Angular applications.
+        <br />
+        <br />
+        For example, sometimes we have a scenario when lazy loaded component is
+        not needed immediately but it is very likely that user will need it very
+        soon. In this case we can preload this component in the background and
+        activate when we need it, when some trigger will be fired.
+        <br />
+        <br />
+        To achive that we can use the
+        <span class="font-bold text-[#7f0cf1]">prefetch</span> keyword and
+        instruct Angular when exactly prefetching has to be started. The build
+        in trigger for this is idle browser state. This state means that browser
+        will start to prefetch the resource as soon as possible when it has no
+        tasks to handle. It means that when comes time for lazy component
+        activation the lazy component will appear on the page instantly because
+        was already prefetched. <br />
+        <img src="../../../assets/deferrable-views-14.png" class="my-2" />
+        We can also provide our custom logic for prefetching mechanism by using
+        the when keyword like in the image.
+        <img src="../../../assets/deferrable-views-15.png" class="my-2" />
+        <br />
+      </p>
     </div>
 
-    <!-- Conclusions -->
-    <div class="w-1/2 bg-white rounded px-4 py-2 h-auto">
-      <h1 class="text-2xl font-medium text-[#fe31d2]"># Conclusions</h1>
+    <!-- Conclusion -->
+    <div class="custom-background w-2/3 bg-white rounded px-4 py-2 h-1/3">
+      <h1 class="text-2xl font-medium text-[#fe31d2]"># Conclusion</h1>
       <hr class="my-1" />
+      <br />
+      <p class="text-4xl font-bold text-[#7f0cf1]">
+        # The Defferable Views is very powerful and makes
+        <span class="font-bold text-[#fe31d2]">#Angular</span> the framework
+        with one of the most powerful lazy loading mechanism on the market
+        🚀🚀🚀🚀🚀🚀!
+      </p>
     </div>
   </div>
 </div>
