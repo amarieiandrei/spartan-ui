@@ -52,9 +52,7 @@ export class SignalsComponent {
   }
 
   addUser() {
-    // When we update a signal we change the reference to the new array and this change will not be picked up by Angular
-    // and We need to reassign the new array from the user signals
-    // Info: We can avoid this by using computed function.
+    // When we update a signal we change the reference to the new array.
     this.users.update((users) => [...users, { id: 3, name: 'John' }]);
   }
 
@@ -75,9 +73,9 @@ export class SignalsComponent {
   });
   thirdItem: WritableSignal<any> = signal({
     question: `What are signals?`,
-    answer: `A signal is like a variable. It holds a value for us and we can change that value whenever we would like. Unlike a variable though, a signal knows where in the application is's used, like which components are displaying its value in their templates, and it can signal to those components whenever we change the value inside. Basically, it is a wrapper around a value that can notify interested consumers when that value changes. Signals can contain any value, from simple primitives to complex data structures.
+    answer: `A signal is like a variable. It holds a value for us and we can change that value whenever we would like. Unlike a variable though, a signal knows where in the application is used, like which components are displaying its value in their templates, and it can signal to those components whenever we change the value inside. Basically, it is a wrapper around a value that can notify interested consumers when that value changes. Signals can contain any value, from simple primitives to complex data structures.
     
-      A signal's value is always read through a getter function, which allows Angular to track where the signal is used.`
+      A signal's value is always read through a getter function, which allows Angular to track where the signal is used.`,
   });
   fourthItem: WritableSignal<any> = signal({
     question: `Writable Signals, Computed Signals, Effects`,
@@ -94,6 +92,6 @@ export class SignalsComponent {
     answer: `Signal equality functions:
     
     When creating a signal, you can optionally provide an equality function, which will be used to check whether the new value is actually different than the previous one.`,
-    example: true
-  })
+    example: true,
+  });
 }
