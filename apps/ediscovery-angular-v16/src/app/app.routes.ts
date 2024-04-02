@@ -43,10 +43,10 @@ export const appRoutes: Route[] = [
       ),
   },
   {
-    path: 'deffered-loading',
+    path: 'performance',
     loadComponent: () =>
-      import('./components/deffered-loading/deffered-loading.component').then(
-        (m) => m.DefferedLoadingComponent
+      import('./components/performance/performance.component').then(
+        (m) => m.PerformanceComponent
       ),
   },
   {

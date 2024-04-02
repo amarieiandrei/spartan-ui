@@ -1,0 +1,96 @@
+<div class="custom-background flex flex-col h-auto">
+    <!-- Header -->
+    <h1 class="text-5xl grid place-content-center my-4">Performance!</h1>
+    <div hlmSeparator orientation="horizontal" class="mb-4"></div>
+
+    <!-- Informations -->
+    <div class="flex flex-row mb-4 gap-4 px-10 py-3">
+        <!-- Server-side rendering -->
+        <div class="w-1/2 bg-white rounded px-4 py-2 h-auto">
+            <h1 class="text-2xl font-medium text-[#7f0cf1]">
+                # Server-side rendering
+            </h1>
+            <hr class="my-1" />
+            <p class="my-2">
+                Server-side rendering (SSR) is a process that involves rendering pages on the server, resulting in
+                initial HTML content which contains initial page state. Once the HTML content is delivered to a browser,
+                Angular initializes the application and utilizes the data contained within the HTML.
+            </p>
+            <h2 class="text-xl font-medium">
+                Why use SSR?
+            </h2>
+            <hr>
+            <p class="my-1">
+                The main <span class="font-bold">advantages</span> of SSR as compared to <span
+                    class="font-bold">client-side rendering</span> (CSR)
+                are:
+            </p>
+            <ul class="list-disc px-3 my-2 text-sm flex flex-col gap-2">
+                <li>
+                    <span class="font-bold">Improved performance:</span> SSR can improve the performance of web
+                    applications by delivering fully
+                    rendered HTML to the client, which the browser can parse and display even before it downloads the
+                    application JavaScript. This can be especially beneficial for users on low-bandwidth connections or
+                    mobile devices.
+                </li>
+                <li>
+                    <span class="font-bold">Improved Core Web Vitals:</span> SSR results in performance improvements
+                    that can be measured using Core
+                    Web Vitals (CWV) statistics, such as reduced First Contentful Paint (FCP) and Largest Contentful
+                    Paint (LCP), as well as Cumulative Layout Shift (CLS).
+                </li>
+                <li>
+                    <span class="font-bold">Better SEO:</span> SSR can improve the search engine optimization (SEO) of
+                    web applications by making it
+                    easier for search engines to crawl and index the content of the application.
+                </li>
+            </ul>
+            <img src="../../../assets/ssr-1.png" class="my-3" />
+            <img src="../../../assets/ssr-2.png" class="my-3" />
+            <img src="../../../assets/ssr-3.png" class="my-3" />
+        </div>
+
+        <!-- Hydration -->
+        <div class="custom-background w-1/2 bg-white rounded px-4 py-2 h-auto">
+            <h1 class="text-2xl font-medium text-[#fe31d2]">
+                # Hydration
+            </h1>
+            <hr class="my-1" />
+            <p class="my-2">
+                Hydration is the process that restores the server-side rendered application on the client. This includes
+                things like reusing the server rendered DOM structures, persisting the application state, transferring
+                application data that was retrieved already by the server, and other processes.
+            </p>
+            <h2 class="text-xl font-medium">
+                Why is hydration important?
+            </h2>
+            <hr>
+            <p class="my-2">
+                Hydration improves application performance by avoiding extra work to re-create DOM nodes. Instead,
+                Angular tries to match existing DOM elements to the applications structure at runtime and reuses DOM
+                nodes when possible. This results in a performance improvement that can be measured using Core Web
+                Vitals (CWV) statistics, such as reducing the First Input Delay (FID) and Largest Contentful Paint
+                (LCP), as well as Cumulative Layout Shift (CLS). Improving these numbers also affects things like SEO
+                performance.
+                <br /> <br />
+                Without hydration enabled, server-side rendered Angular applications will destroy and re-render the
+                application's DOM, which may result in a visible UI flicker. This re-rendering can negatively impact
+                Core Web Vitals like LCP and cause a layout shift. Enabling hydration allows the existing DOM to be
+                re-used and prevents a flicker.
+            </p>
+            <img src="../../../assets/hydration-1.png" class="my-3" />
+            <h2 class="text-xl font-medium">
+                References
+            </h2>
+            <hr>
+            <br />
+            <a href="https://angular.dev/guide/ssr" target="_blank"
+                class="outline text-3xl">https://angular.dev/guide/ssr
+            </a>
+            <br /> <br />
+            <a href="https://angular.dev/guide/hydration" target="_blank"
+                class="outline text-3xl">https://angular.dev/guide/hydration
+            </a>
+        </div>
+    </div>
+</div>

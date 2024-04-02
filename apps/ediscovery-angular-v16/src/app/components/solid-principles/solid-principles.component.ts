@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   Component,
   WritableSignal,
   signal,
@@ -20,21 +19,7 @@ import { HlmSeparatorDirective } from '@spartan-ng/ui-separator-helm';
   imports: [CommonModule, GenericAccordionComponent, HlmSeparatorDirective],
   templateUrl: './solid-principles.component.html',
 })
-export class SolidPrinciplesComponent implements AfterViewInit {
-  dryPrinciple: HTMLElement | null = null;
-  kissPrinciple: HTMLElement | null = null;
-
-  ngAfterViewInit(): void {
-    this.dryPrinciple = document.getElementById('dry-principle');
-    this.kissPrinciple = document.getElementById('kiss-principle');
-
-    this.dryPrinciple?.addEventListener('mouseover', () => {
-      this.dryPrinciple?.classList.add('blur-none');
-    });
-    this.kissPrinciple?.addEventListener('mouseover', () => {
-      this.kissPrinciple?.classList.add('blur-none');
-    });
-  }
+export class SolidPrinciplesComponent {
 
   // General Knowledge
   firstItem: WritableSignal<any> = signal({

@@ -72,12 +72,12 @@ import { RouterLink } from '@angular/router';
       <div hlmSeparator orientation="horizontal"></div>
       <div hlmSeparator orientation="vertical"></div>
       <button
-        hlmBtn
-        [variant]="setRandomVariant()"
-        routerLink="deffered-loading"
+      hlmBtn
+      [variant]="setRandomVariant()"
+      routerLink="/performance"
         class="m-auto"
       >
-        Deffered Loading
+        Performance
       </button>
       <div hlmSeparator orientation="vertical"></div>
       <div hlmSeparator orientation="vertical"></div>
