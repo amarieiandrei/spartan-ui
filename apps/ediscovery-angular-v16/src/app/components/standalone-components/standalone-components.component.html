@@ -1,4 +1,4 @@
-<div class="custom-background-v2 flex flex-col h-auto">
+<div class="custom-background-v2 flex flex-col">
   <!-- Header -->
   <h1 class="text-5xl grid place-content-center my-4">
     Standalone Components!
@@ -6,30 +6,6 @@
   <div hlmSeparator orientation="horizontal" class="mb-4"></div>
 
   <!-- General Knowledge -->
-  <spartan-generic-accordion
-    [firstItem]="firstItem"
-    [secondItem]="secondItem"
-    [thirdItem]="thirdItem"
-    [fourthItem]="fourthItem"
-  ></spartan-generic-accordion>
-
-  <!-- Lazy Loading Example -->
-  <h3 class="text-3xl grid place-content-center my-4">Lazy Loading Example!</h3>
-  <div class="flex place-content-center gap-5 my-4">
-    <img
-      style="height: 150px; width: 300px; border-radius: 10px"
-      src="../../../assets/standalone-1.png"
-      alt="standalone-components-lazy-loading"
-    />
-    <img
-      style="height: 175px; width: 400px; border-radius: 10px"
-      src="../../../assets/standalone-2.png"
-      alt="standalone-components-lazy-loading"
-    />
-    <img
-      style="height: 300px; width: 400px; border-radius: 10px"
-      src="../../../assets/standalone-3.png"
-      alt="standalone-components-lazy-loading"
-    />
-  </div>
+  <spartan-generic-accordion [firstItem]="firstItem" [secondItem]="secondItem" [thirdItem]="thirdItem"
+    [fourthItem]="fourthItem"></spartan-generic-accordion>
 </div>

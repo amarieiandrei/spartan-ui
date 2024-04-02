@@ -64,6 +64,18 @@ export const appRoutes: Route[] = [
       ),
   },
   {
+    path: 'esbuild-vite',
+    loadComponent: () => import('./components/esbuild-vite/esbuild-vite.component').then(
+      (m) => m.EsbuildViteComponent
+    ),
+  },
+  {
+    path: 'new-lifecycle-hooks',
+    loadComponent: () => import('./components/new-lifecycle-hooks/new-lifecycle-hooks.component').then(
+      (m) => m.NewLifecycleHooksComponent
+    ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

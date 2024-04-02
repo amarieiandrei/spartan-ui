@@ -100,6 +100,26 @@ import { RouterLink } from '@angular/router';
         Defferable Views
       </button>
       <div hlmSeparator orientation="horizontal"></div>
+      <button
+        hlmBtn
+        [variant]="setRandomVariant()"
+        routerLink="esbuild-vite"
+        class="m-auto"
+        >
+        esbuild & Vite by default
+      </button>
+      <div hlmSeparator orientation="horizontal"></div>
+      <div hlmSeparator orientation="vertical"></div>
+      <div hlmSeparator orientation="vertical"></div>
+      <div hlmSeparator orientation="vertical"></div>
+      <button
+        hlmBtn
+        [variant]="setRandomVariant()"
+        routerLink="new-lifecycle-hooks"
+        class="m-auto"
+        >
+        New Lifecycle Hooks
+      </button>
     </div>
   `,
 })
