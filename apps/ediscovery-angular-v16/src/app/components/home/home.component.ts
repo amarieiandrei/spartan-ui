@@ -112,14 +112,15 @@ import { RouterLink } from '@angular/router';
       <div hlmSeparator orientation="vertical"></div>
       <div hlmSeparator orientation="vertical"></div>
       <div hlmSeparator orientation="vertical"></div>
-      <button
+      <!-- https://angular.dev/guide/components/lifecycle#afterrender-and-afternextrender -->
+      <!-- <button
         hlmBtn
         [variant]="setRandomVariant()"
         routerLink="new-lifecycle-hooks"
         class="m-auto"
         >
         New Lifecycle Hooks
-      </button>
+      </button> -->
     </div>
   `,
 })
