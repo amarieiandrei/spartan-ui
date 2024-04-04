@@ -72,9 +72,9 @@ import { RouterLink } from '@angular/router';
       <div hlmSeparator orientation="horizontal"></div>
       <div hlmSeparator orientation="vertical"></div>
       <button
-      hlmBtn
-      [variant]="setRandomVariant()"
-      routerLink="/performance"
+        hlmBtn
+        [variant]="setRandomVariant()"
+        routerLink="/performance"
         class="m-auto"
       >
         Performance
@@ -105,7 +105,7 @@ import { RouterLink } from '@angular/router';
         [variant]="setRandomVariant()"
         routerLink="esbuild-vite"
         class="m-auto"
-        >
+      >
         esbuild & Vite by default
       </button>
       <div hlmSeparator orientation="horizontal"></div>
@@ -118,7 +118,7 @@ import { RouterLink } from '@angular/router';
         [variant]="setRandomVariant()"
         routerLink="new-lifecycle-hooks"
         class="m-auto"
-        >
+      >
         New Lifecycle Hooks
       </button> -->
     </div>
